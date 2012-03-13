@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="hello">Hello World, MainActivity!</string>
-    <string name="app_name">Main</string>
+    <string name="app_name">Billing Service</string>
+    <string name="numberOfSears">Number of seats</string>
+    <string name="numberOfSeatsSet">Set</string>
+    <string name="numberOfSeatsToggleButtonText">Use this button to set the number of seats</string>
 
 </resources>
