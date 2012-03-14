@@ -5,12 +5,15 @@ import java.util.List;
 
 public class Seat {
 
+	public static String SEAT_DEFAULT_NAME_PREFIX = "Seat#";
+	
 	private List<Item> itemsList;
 	private String name;
 	
-	public Seat()
+	public Seat(String name)
 	{
 		this.itemsList = new LinkedList<Item>();
+		this.name = name;
 	}
 	
 	public void addItem(Item newItem)
@@ -27,6 +30,32 @@ public class Seat {
 		this.itemsList.add(newItem);
 	}
 	
+	public void removeItem(String itemDescription)
+	{
+		for(Item currItem : itemsList)
+		{
+			if(currItem.getDescription().equals(itemDescription))
+			{
+				this.itemsList.remove(currItem);
+				return;
+			}
+		}
+	}
+	
+	public double getCalculatedTip(int tipPercent)
+	{
+		double total = getCalculatedPrice();
+		
+		return (total * (tipPercent / 100));
+	}
+	
+	public double getCalculatedPrice(int tipPercent)
+	{
+		double total = getCalculatedPrice();
+		
+		return (total * (1 + (tipPercent / 100)));
+	}
+	
 	public double getCalculatedPrice()
 	{	
 		double total = 0;
@@ -36,6 +65,11 @@ public class Seat {
 		}
 		
 		return total;
+	}
+	
+	public void clear()
+	{
+		this.itemsList = new LinkedList<Item>();
 	}
 
 	public String getName()

@@ -23,7 +23,7 @@ public class Table {
 		this.seats = new LinkedList<Seat>();
 		for(int i = 0; i < numberOfSeats; ++i)
 		{
-			this.seats.add(new Seat());
+			this.seats.add(new Seat(Seat.SEAT_DEFAULT_NAME_PREFIX + i));
 		}
 	}
 	
